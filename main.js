@@ -23,11 +23,12 @@ testing = (event) => {
     //console.log(list.childElementCount); //shows number of li in checklist
 
     //This resets the value in the placeholder
+
     text.value = "";
   }
 };
 
-// version 1
+// version 1 // Removes other points
 // remove = () => {
 //   for (let index = 0; index <= list.children.length; index++) {
 //     list.children[index].remove();
