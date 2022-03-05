@@ -54,22 +54,29 @@ let list = document.querySelector("#checklist");
 
 // button.addEventListener("click", toDo);
 
-toDo = (event) => {
-  if (event.keyCode == 13) {
-    console.log("Enter");
+// toDo = (event) => {
+//   if (event.keyCode === 13) {
+//     alert("Enter is pressed!");
 
-    // list.insertAdjacentHTML(
-    //   "beforeend",
-    //   `<li>${text.value} <button type="button" class="delete" onclick ="this.parentElement.remove()";
-    //   >X</button></li>`
-    // );
+//     // list.insertAdjacentHTML(
+//     //   "beforeend",
+//     //   `<li>${text.value} <button type="button" class="delete" onclick ="this.parentElement.remove()";
+//     //   >X</button></li>`
+//     // );
 
-    text.value = "";
+//     text.value = "";
+//   }
+
+//   // else if (text.value == "") {
+//   //   console.log("Please enter something.");
+//   // }
+// };
+
+// text.addEventListener("keyup", toDo);
+
+document.getElementById("text").addEventListener("keyup", function (event) {
+  if (event.keyCode === 13) {
+    document.getElementById("add").click();
+    return false;
   }
-
-  // else if (text.value == "") {
-  //   console.log("Please enter something.");
-  // }
-};
-
-text.addEventListener("keyup", toDo);
+});
