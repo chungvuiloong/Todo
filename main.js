@@ -3,7 +3,7 @@ let button = document.querySelector("#add");
 let deleteAll = document.querySelector("#deleteAll");
 let list = document.querySelector("#checklist");
 
-////////////////////////////////
+//////////////////////////////// WORKS
 
 // toDo = (event) => {
 //   event.preventDefault();
@@ -55,19 +55,21 @@ let list = document.querySelector("#checklist");
 // button.addEventListener("click", toDo);
 
 toDo = (event) => {
-  if (event.keyCode === 13) {
-    event.preventDefault();
-    console.log("enter");
-    document.getElementById("button").click();
-    list.insertAdjacentHTML(
-      "beforeend",
-      `<li>${text.value} <button type="button" class="delete" onclick ="this.parentElement.remove()";
-      >X</button></li>`
-    );
+  if (event.keyCode == 13) {
+    console.log("Enter");
+
+    // list.insertAdjacentHTML(
+    //   "beforeend",
+    //   `<li>${text.value} <button type="button" class="delete" onclick ="this.parentElement.remove()";
+    //   >X</button></li>`
+    // );
+
     text.value = "";
-  } else if (text.value == "") {
-    console.log("Please enter something.");
   }
+
+  // else if (text.value == "") {
+  //   console.log("Please enter something.");
+  // }
 };
 
 text.addEventListener("keyup", toDo);
