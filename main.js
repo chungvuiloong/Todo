@@ -1,26 +1,7 @@
 let text = document.querySelector("#text");
+let input = document.querySelector("input");
 let button = document.querySelector("#add");
-let deleteAll = document.querySelector("#deleteAll");
 let list = document.querySelector("#checklist");
-
-//////////////////////////////// WORKS
-
-// toDo = (event) => {
-//   event.preventDefault();
-
-//   if (event.keyCode === 13) {
-//     console.log("enter");
-//   } else if (text.value == "") {
-//     console.log("Please enter something.");
-//   } else {
-//     list.insertAdjacentHTML(
-//       "beforeend",
-//       `<li>${text.value} <button type="button" class="delete" onclick ="this.parentElement.remove()";
-//       >X</button></li>`
-//     );
-//     text.value = "";
-//   }
-// };
 
 // if (list.children.length <= 1) {
 //   document.querySelector("#myTasks").textContent = "Task";
@@ -52,31 +33,39 @@ let list = document.querySelector("#checklist");
 //   }
 // };
 
-// button.addEventListener("click", toDo);
+toDo = (event) => {
+  if (event.key === "Enter") {
+    list.insertAdjacentHTML(
+      "beforeend",
+      `<li>${text.value} <button type="button" class="delete" onclick ="this.parentElement.remove()";
+      >X</button></li>`
+    );
+
+    text.value = "";
+  } else if (text.value == "") {
+    console.log("Please enter something.");
+  } else {
+  }
+};
+
+input.addEventListener("keyup", toDo);
+
+//////////////////////////////// WORKS DONT DELETE
 
 // toDo = (event) => {
-//   if (event.keyCode === 13) {
-//     alert("Enter is pressed!");
+//   event.preventDefault();
 
-//     // list.insertAdjacentHTML(
-//     //   "beforeend",
-//     //   `<li>${text.value} <button type="button" class="delete" onclick ="this.parentElement.remove()";
-//     //   >X</button></li>`
-//     // );
+//   if (text.value == "") {
+//     console.log("Please enter something.");
+//   } else {
+//     list.insertAdjacentHTML(
+//       "beforeend",
+//       `<li>${text.value} <button type="button" class="delete" onclick="this.parentElement.remove()";
+//       >X</button> </li>`
+//     );
 
 //     text.value = "";
 //   }
-
-//   // else if (text.value == "") {
-//   //   console.log("Please enter something.");
-//   // }
 // };
 
-// text.addEventListener("keyup", toDo);
-
-document.getElementById("text").addEventListener("keyup", function (event) {
-  if (event.keyCode === 13) {
-    document.getElementById("add").click();
-    return false;
-  }
-});
+// button.addEventListener("click", toDo);
