@@ -33,15 +33,16 @@ let list = document.querySelector("#checklist");
 //   }
 // };
 
-toDo = (event) => {
-  if (event.key === "Enter") {
-    list.insertAdjacentHTML(
-      "beforeend",
-      `<li>${text.value} <button type="button" class="delete" onclick ="this.parentElement.remove()";
-      >X</button></li>`
-    );
+toDo = (e) => {
+  if (e.key === "Enter") {
+    console.log("Enter");
+    // list.insertAdjacentHTML(
+    //   "beforeend",
+    //   `<li>${text.value} <button type="button" class="delete" onclick ="this.parentElement.remove()";
+    //   >X</button></li>`
+    // );
 
-    text.value = "";
+    // text.value = "";
   } else if (text.value == "") {
     console.log("Please enter something.");
   } else {
