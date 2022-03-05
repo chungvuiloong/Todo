@@ -8,14 +8,22 @@
     <title>MrJays ToDo List</title>
   </head>
   <body>
-    <section>
+    <section id="container">
       <h1>To-do list</h1>
       <form id="checklistContainer">
-        <input type="text" id="text" placeholder="What to do..." />
-        <button type="button" id="add">Add</button>
-        <button type="button" id="deleteAll">Total chaos</button>
+        <input
+          type="text"
+          id="text"
+          placeholder="Add some tasks and press enter"
+        />
 
+        <button type="button" id="add">Add</button>
         <ul id="checklist"></ul>
+
+        <div id="taskContainer">
+          <div id="numberOfTasks"></div>
+          <div id="myTasks"></div>
+        </div>
       </form>
     </section>
 

@@ -5,28 +5,45 @@ let list = document.querySelector("#checklist");
 
 ////////////////////////////////
 
-let i = 0;
+// toDo = (event) => {
+//   event.preventDefault();
 
-testing = (event) => {
-  event.preventDefault();
+//   if (event.keyCode === 13) {
+//     console.log("enter");
+//   } else if (text.value == "") {
+//     console.log("Please enter something.");
+//   } else {
+//     list.insertAdjacentHTML(
+//       "beforeend",
+//       `<li>${text.value} <button type="button" class="delete" onclick ="this.parentElement.remove()";
+//       >X</button></li>`
+//     );
+//     text.value = "";
+//   }
+// };
 
-  if (text.value == "") {
-    console.log("Please enter something.");
-  } else {
-    list.insertAdjacentHTML(
-      "beforeend",
-      `<li>${text.value} <button type="button" class="delete" onclick="this.parentNode.parentNode.removeChild(this.parentNode);">X</button></li>`
-    );
+// if (list.children.length <= 1) {
+//   document.querySelector("#myTasks").textContent = "Task";
+// } else {
+//   document.querySelector("#myTasks").textContent = "Tasks";
+// }
 
-    //  console.log(list.children); // shows the list of li   checklist.children[0], [1], [2]
-    //console.log(list.children.length); //shows number of li in checklist
-    //console.log(list.childElementCount); //shows number of li in checklist
+// document.querySelector("#numberOfTasks").textContent = list.children.length;
 
-    //This resets the value in the placeholder
+// Version2 works!! and short too
+// onclick = "this.parentElement.remove();";
 
-    text.value = "";
-  }
-};
+//Version 1. This works but too long
+// onclick = "this.parentNode.parentNode.removeChild(this.parentNode);";
+// console.log(list.children); // shows the list of li   checklist.children[0], [1], [2]
+// console.log(list.children.length); //shows number of li in checklist
+// console.log(list.childElementCount); //shows number of li in checklist
+
+//This resets the value in the placeholder
+
+// remove = () => {
+//   this.parentElement.remove;
+// };
 
 // version 1 // Removes other points
 // remove = () => {
@@ -35,7 +52,22 @@ testing = (event) => {
 //   }
 // };
 
-button.addEventListener("click", testing);
+// button.addEventListener("click", toDo);
 
-// Deletes everything and cant add things after this
-deleteAll.addEventListener("click", () => list.remove());
+toDo = (event) => {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    console.log("enter");
+    document.getElementById("button").click();
+    list.insertAdjacentHTML(
+      "beforeend",
+      `<li>${text.value} <button type="button" class="delete" onclick ="this.parentElement.remove()";
+      >X</button></li>`
+    );
+    text.value = "";
+  } else if (text.value == "") {
+    console.log("Please enter something.");
+  }
+};
+
+text.addEventListener("keyup", toDo);
