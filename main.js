@@ -1,15 +1,7 @@
 // let text = document.querySelector("#text");
-// // let input = document.querySelector("input");
+// let input = document.querySelector("input");
 // let button = document.querySelector("#add");
 // let list = document.querySelector("#checklist");
-
-// if (list.children.length <= 1) {
-//   document.querySelector("#myTasks").textContent = "Task";
-// } else {
-//   document.querySelector("#myTasks").textContent = "Tasks";
-// }
-
-// document.querySelector("#numberOfTasks").textContent = list.children.length;
 
 // Version2 works!! and short too
 // onclick = "this.parentElement.remove();";
@@ -20,27 +12,52 @@
 // console.log(list.children.length); //shows number of li in checklist
 // console.log(list.childElementCount); //shows number of li in checklist
 
-//This resets the value in the placeholder
+let text = document.querySelector("#text");
+let input = document.querySelector("input");
+let button = document.querySelector("#add");
+let list = document.querySelector("#checklist");
 
-// remove = () => {
-//   this.parentElement.remove;
-// };
+/////////////////////////////////////////////////
 
-// version 1 // Removes other points
-// remove = () => {
-//   for (let index = 0; index <= list.children.length; index++) {
-//     list.children[index].remove();
-//   }
-// };
-
-const input = document.querySelector("input");
-input.addEventListener("keyup", (event) => {
-  if (event.key === "Enter") {
-    console.log("Enter key pressed");
+toDo = (event) => {
+  if (text.value == "") {
+    console.log("Please enter something.");
+  } else if (event.key === "Enter") {
+    event.preventDefault();
+    list.insertAdjacentHTML(
+      "beforeend",
+      `<li>${text.value} <button type="button" class="delete" onclick="this.parentElement.remove()";
+      >X</button> </li>`
+    );
+    text.value = "";
   }
-});
+};
 
-//////////////////////////////// WORKS DONT DELETE
+calculate = () => {
+  let task;
+  if (list.childElementCount <= 1) {
+    task = `Task left`;
+  } else {
+    task = `Tasks left`;
+  }
+
+  document.querySelector(
+    "#numberOfTasks"
+  ).textContent = `${list.childElementCount} ${task}`;
+};
+
+////////////////////////////////////////////////
+
+input.addEventListener("keypress", toDo);
+document.addEventListener("click", calculate);
+document.addEventListener("keypress", calculate);
+
+//////////////////////////////// ADD BUTTON WORKS DONT DELETE
+
+// let text = document.querySelector("#text");
+// let input = document.querySelector("input");
+// let button = document.querySelector("#add");
+// let list = document.querySelector("#checklist");
 
 // toDo = (event) => {
 //   event.preventDefault();
