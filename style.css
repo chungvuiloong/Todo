@@ -55,9 +55,12 @@ li:nth-child(2n) {
   background-color: rgb(148, 179, 247);
 }
 
-li:hover,
-button:hover {
+li:hover {
   background-color: rgb(66, 66, 194);
+}
+
+button:hover {
+  background-color: rgb(136, 76, 248);
 }
 
 button {
