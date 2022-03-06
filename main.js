@@ -1,8 +1,3 @@
-// let text = document.querySelector("#text");
-// let input = document.querySelector("input");
-// let button = document.querySelector("#add");
-// let list = document.querySelector("#checklist");
-
 // Version2 works!! and short too
 // onclick = "this.parentElement.remove();";
 
