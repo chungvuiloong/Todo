@@ -42,13 +42,6 @@ input {
   font-size: 2.5em;
 }
 
-#checklist {
-}
-
-::marker {
-  color: rgb(66, 66, 194);
-}
-
 li {
   padding-left: 0.5em;
   vertical-align: middle;
