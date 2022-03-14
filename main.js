@@ -20,6 +20,7 @@ let list = document.querySelector("#checklist");
     return "None";
   } 
   
+  // Press Enter to submit
   else if (event.key === "Enter") {
     event.preventDefault();
     list.insertAdjacentHTML(
