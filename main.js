@@ -16,6 +16,7 @@ let list = document.querySelector("#checklist");
 
 toDo = (event) => {
   if (text.value == "") {
+    return "none";
     console.log("Please enter something.");
   } else if (event.key === "Enter") {
     event.preventDefault();
@@ -26,6 +27,8 @@ toDo = (event) => {
     );
     text.value = "";
   }
+
+
 };
 
 calculate = () => {
@@ -43,6 +46,7 @@ calculate = () => {
 
 ////////////////////////////////////////////////
 
+// windows.addEventListener("onload", calculate);
 input.addEventListener("keypress", toDo);
 document.addEventListener("click", calculate);
 document.addEventListener("keypress", calculate);
