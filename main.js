@@ -15,10 +15,11 @@ let list = document.querySelector("#checklist");
 /////////////////////////////////////////////////
 
 toDo = (event) => {
-  if (text.value == "") {
-    return "none";
-    console.log("Please enter something.");
-  } else if (event.key === "Enter") {
+  if (text.value === "") {
+    console.log("Please type something")
+  } 
+  
+  else if (event.key === "Enter") {
     event.preventDefault();
     list.insertAdjacentHTML(
       "beforeend",
