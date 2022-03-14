@@ -16,7 +16,7 @@ let list = document.querySelector("#checklist");
 
 toDo = (event) => {
   if (text.value === "") {
-    console.log("Please type something")
+    console.log("Please type something");
   } 
   
   else if (event.key === "Enter") {
