@@ -14,9 +14,10 @@ let list = document.querySelector("#checklist");
 
 /////////////////////////////////////////////////
 
-toDo = (event) => {
+ toDo = (event) => {
   if (text.value === "") {
     console.log("Please type something");
+    return "None";
   } 
   
   else if (event.key === "Enter") {
@@ -28,6 +29,7 @@ toDo = (event) => {
     );
     text.value = "";
   }
+ 
 
 
 };
